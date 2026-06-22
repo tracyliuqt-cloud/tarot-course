@@ -1,230 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>塔罗自学课件</title>
-    <style>
-        :root {
-            --bg: #1a1a2e;
-            --card-bg: #16213e;
-            --text: #e0d7c6;
-            --accent: #c9a96e;
-            --accent2: #7b5ea7;
-            --border: #2a2a4a;
-            --muted: #8a8a9a;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", "Songti SC", Georgia, serif;
-            line-height: 1.85;
-            font-size: 17px;
-        }
-        
-        .container {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            min-height: 100vh;
-        }
-        
-        /* 侧边导航 */
-        nav {
-            width: 260px;
-            min-width: 260px;
-            background: var(--card-bg);
-            padding: 40px 24px;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            overflow-y: auto;
-            border-right: 1px solid var(--border);
-        }
-        
-        nav h1 {
-            font-size: 1.2em;
-            color: var(--accent);
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border);
-            letter-spacing: 0.05em;
-        }
-        
-        nav ul {
-            list-style: none;
-        }
-        
-        nav li {
-            margin-bottom: 6px;
-        }
-        
-        nav a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.9em;
-            display: block;
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: all 0.2s;
-        }
-        
-        nav a:hover {
-            color: var(--accent);
-            background: rgba(201, 169, 110, 0.08);
-        }
-        
-        /* 主内容 */
-        main {
-            flex: 1;
-            padding: 48px 56px;
-            max-width: 780px;
-        }
-        
-        .module {
-            margin-bottom: 64px;
-            padding-bottom: 48px;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .module:last-child {
-            border-bottom: none;
-        }
-        
-        .module-title {
-            font-size: 1.6em;
-            color: var(--accent);
-            margin-bottom: 28px;
-            letter-spacing: 0.04em;
-        }
-        
-        .module-content h2 {
-            font-size: 1.25em;
-            color: #d4c5a9;
-            margin: 36px 0 16px;
-        }
-        
-        .module-content h3 {
-            font-size: 1.1em;
-            color: var(--accent2);
-            margin: 28px 0 12px;
-        }
-        
-        .module-content p {
-            margin-bottom: 16px;
-            text-align: justify;
-        }
-        
-        .module-content strong {
-            color: #f0e0c0;
-        }
-        
-        .module-content blockquote {
-            border-left: 3px solid var(--accent);
-            margin: 20px 0;
-            padding: 12px 20px;
-            background: rgba(201, 169, 110, 0.06);
-            border-radius: 0 6px 6px 0;
-            color: #c0b89a;
-            font-style: italic;
-        }
-        
-        .module-content blockquote p {
-            margin-bottom: 8px;
-        }
-        
-        .module-content ul, .module-content ol {
-            margin: 12px 0 20px 24px;
-        }
-        
-        .module-content li {
-            margin-bottom: 6px;
-        }
-        
-        .module-content table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.95em;
-        }
-        
-        .module-content th {
-            background: var(--card-bg);
-            color: var(--accent);
-            padding: 10px 14px;
-            text-align: left;
-            border-bottom: 2px solid var(--accent);
-        }
-        
-        .module-content td {
-            padding: 10px 14px;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .module-content tr:hover td {
-            background: rgba(201, 169, 110, 0.04);
-        }
-        
-        .module-content img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 24px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.4);
-            border: 1px solid var(--border);
-        }
-        
-        .module-content hr {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 32px 0;
-        }
-        
-        .module-content code {
-            background: var(--card-bg);
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        
-        .module-content em {
-            color: #b8a88a;
-        }
-        
-        /* 响应式 */
-        @media (max-width: 900px) {
-            .container { flex-direction: column; }
-            nav {
-                width: 100%;
-                min-width: 100%;
-                height: auto;
-                position: relative;
-                padding: 20px;
-            }
-            nav ul { display: flex; flex-wrap: wrap; gap: 4px; }
-            nav li { margin-bottom: 0; }
-            main { padding: 24px 20px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>塔罗自学课件</title>
+<style>
+:root{--bg:#1a1a2e;--card-bg:#16213e;--text:#e0d7c6;--accent:#c9a96e;--accent2:#7b5ea7;--border:#2a2a4a;--muted:#8a8a9a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"Noto Serif SC","Source Han Serif SC","STSong",Georgia,serif;line-height:1.85;font-size:17px}
+.container{display:flex;max-width:1200px;margin:0 auto;min-height:100vh}
+nav{width:260px;min-width:260px;background:var(--card-bg);padding:40px 24px;position:sticky;top:0;height:100vh;overflow-y:auto;border-right:1px solid var(--border)}
+nav h1{font-size:1.2em;color:var(--accent);margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border);letter-spacing:0.05em}
+nav ul{list-style:none}nav li{margin-bottom:6px}
+nav a{color:var(--muted);text-decoration:none;font-size:0.9em;display:block;padding:6px 12px;border-radius:4px;transition:all 0.2s}
+nav a:hover{color:var(--accent);background:rgba(201,169,110,0.08)}
+main{flex:1;padding:48px 56px;max-width:780px}
+.module{margin-bottom:64px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.module:last-child{border-bottom:none}
+.module-title{font-size:1.6em;color:var(--accent);margin-bottom:28px;letter-spacing:0.04em}
+.module-content h2{font-size:1.25em;color:#d4c5a9;margin:36px 0 16px}
+.module-content h3{font-size:1.1em;color:var(--accent2);margin:28px 0 12px}
+.module-content p{margin-bottom:16px;text-align:justify}
+.module-content strong{color:#f0e0c0}
+.module-content blockquote{border-left:3px solid var(--accent);margin:20px 0;padding:12px 20px;background:rgba(201,169,110,0.06);border-radius:0 6px 6px 0;color:#c0b89a;font-style:italic}
+.module-content blockquote p{margin-bottom:8px}
+.module-content ul,.module-content ol{margin:12px 0 20px 24px}
+.module-content li{margin-bottom:6px}
+.module-content table{width:100%;border-collapse:collapse;margin:20px 0;font-size:0.95em}
+.module-content th{background:var(--card-bg);color:var(--accent);padding:10px 14px;text-align:left;border-bottom:2px solid var(--accent)}
+.module-content td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.module-content tr:hover td{background:rgba(201,169,110,0.04)}
+.module-content img{max-width:100%;height:auto;display:block;margin:24px auto;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,0.4);border:1px solid var(--border)}
+.module-content hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+.module-content code{background:var(--card-bg);padding:2px 6px;border-radius:3px;font-size:0.9em}
+.module-content em{color:#b8a88a}
+@media(max-width:900px){.container{flex-direction:column}nav{width:100%;min-width:100%;height:auto;position:relative;padding:20px}nav ul{display:flex;flex-wrap:wrap;gap:4px}nav li{margin-bottom:0}main{padding:24px 20px}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <h1>🃏 塔罗自学课件</h1>
-            <ul>
-                <li><a href="#section-0">前言</a></li><li><a href="#section-1">模块一｜为什么人人都对塔罗好奇</a></li><li><a href="#section-2">模块二｜认识你的牌</a></li><li><a href="#section-3">模块三｜关键词联想法</a></li><li><a href="#section-4">模块四｜每日单张牌练习</a></li><li><a href="#section-5">模块五｜三牌阵与提问技巧</a></li><li><a href="#section-6">模块六｜从单张牌到一个故事</a></li><li><a href="#section-7">模块七｜21天练习计划</a></li>
-            </ul>
-        </nav>
-        <main>
-            
+<div class="container">
+<nav><h1>🃏 塔罗自学课件</h1><ul><li><a href="#section-0">前言</a></li><li><a href="#section-1">模块一｜为什么人人都对塔罗好奇</a></li><li><a href="#section-2">模块二｜认识你的牌</a></li><li><a href="#section-3">模块三｜关键词联想法</a></li><li><a href="#section-4">模块四｜每日单张牌练习</a></li><li><a href="#section-5">模块五｜三牌阵与提问技巧</a></li><li><a href="#section-6">模块六｜从单张牌到一个故事</a></li></ul></nav>
+<main>
     <section id="section-0" class="module">
         <h2 class="module-title">前言</h2>
-        <div class="module-content">
-            <p>欢迎你打开这套塔罗自学套装。</p>
+        <div class="module-content"><p>欢迎你打开这套塔罗自学套装。</p>
 <p>在你手中的不只是一副牌，而是一套流传了六百多年的图像语言体系。从文艺复兴时期的意大利宫廷，到19世纪法国神秘学沙龙，再到今天你刷到的每一条塔罗短视频——这套78张的图像系统，穿越了战争、革命、互联网泡沫，依然让人忍不住想翻开看看。</p>
 <p>为什么？因为人天生对"故事"上瘾，而塔罗牌上的每一张图，都是一段故事的入口。</p>
 <p>市面上的塔罗教程大致分两种：一种是让你死记硬背78张牌的"标准牌意"，像背单词书一样从第一页啃到最后一页，三个月后翻开牌还是一脸茫然；另一种是告诉你"这个我帮你算就行"，你永远学不会自己读牌。</p>
@@ -238,14 +57,11 @@
 <li>第七模块有一个21天练习计划，建议学完前六个模块后启动</li>
 <li>练习中遇到困惑，扫码加入我们的学习社群，和其他学员一起交流</li>
 </ul>
-<p>准备好了吗？翻开你的第一张牌。</p>
-        </div>
+<p>准备好了吗？翻开你的第一张牌。</p></div>
     </section>
-    
     <section id="section-1" class="module">
         <h2 class="module-title">模块一｜为什么人人都对塔罗好奇</h2>
-        <div class="module-content">
-            <hr />
+        <div class="module-content"><hr />
 <h2>一张纸牌，凭什么让人着迷了六百年？</h2>
 <p>1441年，意大利米兰。一位名叫博尼法乔·本博的画师，为维斯康蒂公爵家族绘制了一套手工金箔牌。这是现存最古老的塔罗牌，比哥伦布发现美洲还早了五十年。</p>
 <p>六百年后，你在手机上刷到一条"今日运势"塔罗视频，手指一滑，三秒之内就决定停下来看看。</p>
@@ -284,14 +100,11 @@
 <hr />
 <blockquote>
 <p><strong>一个提醒：</strong> 这个练习没有标准答案，也不存在"写得好不好"。你只需要诚实地记下来。如果你想发到社交媒体上，可以用话题 #塔罗自学日记——但内容不必暴露隐私，写"完成模块一练习"就足够了。</p>
-</blockquote>
-        </div>
+</blockquote></div>
     </section>
-    
     <section id="section-2" class="module">
         <h2 class="module-title">模块二｜认识你的牌</h2>
-        <div class="module-content">
-            <hr />
+        <div class="module-content"><hr />
 <h2>你的牌，不只是78张纸</h2>
 <p>打开盒子的时候，你可能会先注意到那块黑色绒面桌布，和那个束口牌袋。先别急着拆牌，我们花一分钟聊聊这两个配件。</p>
 <p><strong>桌布不只是为了保护牌。</strong> 它是一种"空间划定"——铺开桌布的那一刻，你在桌上划出了一块专属于你和牌的对话区域。以后每次练习，铺桌布这个动作本身就会成为进入状态的信号。</p>
@@ -419,14 +232,11 @@
 <hr />
 <blockquote>
 <p><strong>下个模块预告：</strong> 你已经有了一张牌、一个问题、和一次"仪式感"。接下来我们要进入这套教程最核心的方法——<strong>关键词联想法</strong>。不背书，不查字典，让你用自己的眼睛去读牌。</p>
-</blockquote>
-        </div>
+</blockquote></div>
     </section>
-    
     <section id="section-3" class="module">
         <h2 class="module-title">模块三｜关键词联想法</h2>
-        <div class="module-content">
-            <hr />
+        <div class="module-content"><hr />
 <h2>新手最大的痛点：记不住牌意</h2>
 <p>学塔罗的人，十个有九个卡在同一个地方——翻开一张牌，脑子里一片空白，然后下意识地想去翻书查"标准牌意"。</p>
 <p>这不是你的问题。市面上大多数塔罗教程，本质上都是把78张牌的"标准牌意"列给你，然后让你像背英语单词一样去记忆。问题是，任何一张塔罗牌都没有唯一的标准答案。同一张"高塔"，在不同的问题里、不同的位置、面对不同的人，可能意味着"解放""崩溃""觉醒""突如其来"——你背哪个？</p>
@@ -533,14 +343,11 @@
 </ol>
 <blockquote>
 <p><strong>记住：</strong> 这个练习不是"考试"。你写的关键词不需要和任何人的答案一致。如果你觉得一张牌给你的感觉是"烦躁"，就写"烦躁"——哪怕牌面上画的是一个微笑的天使。直觉没有对错，只有诚实不诚实。</p>
-</blockquote>
-        </div>
+</blockquote></div>
     </section>
-    
     <section id="section-4" class="module">
         <h2 class="module-title">模块四｜每日单张牌练习</h2>
-        <div class="module-content">
-            <hr />
+        <div class="module-content"><hr />
 <h2>最强大的练习，往往是最简单的</h2>
 <p>现在你已经会洗牌了，会用三个维度找关键词了。接下来要做的不是学更多牌阵，而是建立一件更基础的事：<strong>习惯</strong>。</p>
 <p>塔罗不是那种"学完就会"的技能。它更像学一门乐器——每天摸一摸，比一周猛练一次有效十倍。而这个模块要教你的"每日单张牌练习"，就是塔罗世界里最像"每天练音阶"的东西。</p>
@@ -636,14 +443,11 @@
 <hr />
 <blockquote>
 <p><strong>下个模块预告：</strong> 你已经能每天和一张牌对话了。接下来我们学习三牌阵——如何把一个问题拆成三个位置，以及更重要的：如何把问题本身问对。</p>
-</blockquote>
-        </div>
+</blockquote></div>
     </section>
-    
     <section id="section-5" class="module">
         <h2 class="module-title">模块五｜三牌阵与提问技巧</h2>
-        <div class="module-content">
-            <hr />
+        <div class="module-content"><hr />
 <h2>从一张到三张：为什么是"三"？</h2>
 <p>你已经学会每天用一张牌做自我觉察了。现在我们要往前一步：当一个问题比较复杂，一张牌确实不够用的时候，三张牌是最优雅的解法。</p>
 <p>为什么是三张，而不是五张、十张、凯尔特十字？</p>
@@ -799,14 +603,11 @@
 <hr />
 <blockquote>
 <p><strong>下个模块预告：</strong> 你已经能从三张牌中提取关键词了。接下来，我们要把这些关键词变成一段有开头、中间和结尾的<strong>完整故事</strong>——这是从"读牌"到"读自己"的关键一步。</p>
-</blockquote>
-        </div>
+</blockquote></div>
     </section>
-    
     <section id="section-6" class="module">
         <h2 class="module-title">模块六｜从单张牌到一个故事</h2>
-        <div class="module-content">
-            <hr />
+        <div class="module-content"><hr />
 <h2>牌和牌之间，有一条看不见的线</h2>
 <p>你已经会了关键词联想，会了三牌阵，会把封闭式问题改写成开放式提问。现在你翻开三张牌，脑子里有三个关键词——然后呢？</p>
 <p>大多数自学者卡在这一步：三张牌都有了感觉，但就是不知道它们"加起来"在说什么。于是又回到老习惯——翻开书，一张一张查"标准牌意"，最后拼出来的东西，像三句互不相干的句子强行贴在一起。</p>
@@ -956,302 +757,19 @@
 <p><strong>落点（第三张）：</strong> 所以有可能走向……</p>
 </blockquote>
 <hr />
-<blockquote>
-<p><strong>下个模块预告：</strong> 你已经掌握了一整套自学方法——从关键词到三牌阵到故事。最后一个模块，我们要把这些串联成一个可持续的练习习惯，让你在没有教程的日子里，依然能和你的牌保持对话。同时，我们也会聊聊这个学习社群——你不是一个人在学。</p>
-</blockquote>
-        </div>
-    </section>
-    
-    <section id="section-7" class="module">
-        <h2 class="module-title">模块七｜21天练习计划</h2>
-        <div class="module-content">
-            <hr />
-<h2>你已经学会了方法，接下来是让它长进你的生活</h2>
-<p>前面六个模块，你学到了：</p>
+<hr />
+<h2>你已经学会了</h2>
+<p>从模块一到模块六，你学到的不只是"怎么用塔罗牌"，而是一套完整的自我对话方法：</p>
 <ul>
-<li>塔罗为什么让人着迷——以及为什么这是一门可以<strong>自己学会</strong>的技艺</li>
-<li>78张牌的结构——铺桌布、洗牌、用仪式感开启每一次对话</li>
-<li>关键词联想法——用姿态、颜色、数字三个维度，替代死记硬背</li>
-<li>每日单张牌——用最小的练习建立最大的习惯</li>
-<li>三牌阵与提问技巧——把封闭式问题改写成开放式探索</li>
-<li>从单张牌到故事——把图像变成一段关于你自己的叙述</li>
+<li><strong>关键词联想法</strong> —— 用姿态、颜色、数字替代死记硬背</li>
+<li><strong>每日单张牌</strong> —— 用最小的练习建立最大的习惯</li>
+<li><strong>三牌阵与提问技巧</strong> —— 把封闭式问题改写成开放式探索</li>
+<li><strong>从单张牌到故事</strong> —— 把图像变成一段关于你自己的叙述</li>
 </ul>
-<p>这些方法你已经全部掌握了。但有一件事是任何教程都做不到的——<strong>替你坚持。</strong></p>
-<p>所以这个模块不是"教你更多"，而是给你一个<strong>21天练习框架</strong>。21天不是随便说的——行为心理学里，21天是建立一个新习惯的经典周期。你不一定21天后就变成塔罗大师，但你一定会和你的牌之间，建立起一种不需要教程也能持续对话的关系。</p>
-<hr />
-<h2>21天练习结构</h2>
-<p>21天分成三个7天阶段，每个阶段有一个重点：</p>
-<table>
-<thead>
-<tr>
-<th>阶段</th>
-<th>天数</th>
-<th>重点</th>
-<th>每天耗时</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>第一阶段</td>
-<td>Day 1-7</td>
-<td>每日单张牌 + 记录</td>
-<td>3-5分钟</td>
-</tr>
-<tr>
-<td>第二阶段</td>
-<td>Day 8-14</td>
-<td>每日单张牌 + 每周一次三牌阵</td>
-<td>3-10分钟</td>
-</tr>
-<tr>
-<td>第三阶段</td>
-<td>Day 15-21</td>
-<td>每日单张牌 + 三牌阵 + 串故事</td>
-<td>5-15分钟</td>
-</tr>
-</tbody>
-</table>
-<p>原则只有一条：<strong>宁短不断。</strong> 哪怕今天只抽一张牌、看一眼、不记录——也算完成。不要因为"今天没时间做完整练习"就跳过。一张牌，十秒钟，足够。</p>
-<hr />
-<h2>第一阶段：建立节奏（Day 1-7）</h2>
-<p><strong>目标：</strong> 让每天抽一张牌变成像刷牙一样自然的事。</p>
-<p><strong>每日任务：</strong></p>
-<ul>
-<li>[ ] 固定时间（建议起床后或睡前）</li>
-<li>[ ] 洗牌，心里默念"今天我需要关注什么？"</li>
-<li>[ ] 抽一张牌，用三个维度扫一遍（姿态、颜色、数字）</li>
-<li>[ ] 记一句话：日期 + 牌名/描述 + 今天的关键词</li>
-</ul>
-<p><strong>第一阶段的"不要"：</strong>
-- 不要查书、不要查标准牌意
-- 不要因为"看不懂"就跳过
-- 不要评判自己记得好不好</p>
-<p><strong>周末小回顾（Day 7）：</strong> 翻看这一周的7条记录，问自己：这7张牌之间有什么重复出现的颜色、数字或主题吗？写下一句观察。</p>
-<hr />
-<h2>第二阶段：加入三牌阵（Day 8-14）</h2>
-<p><strong>目标：</strong> 在每日单张牌的基础上，每周做一次深度练习。</p>
-<p><strong>每日任务（不变）：</strong></p>
-<ul>
-<li>[ ] 每日单张牌 + 一句话记录</li>
-</ul>
-<p><strong>每周任务（选一天，花10分钟）：</strong></p>
-<ul>
-<li>[ ] 想一个这周让你困扰的事（可以是小的，比如"为什么这周特别累"）</li>
-<li>[ ] 用模块五的方法，把困扰改写成开放式提问</li>
-<li>[ ] 选一个三牌阵（建议"过去-现在-未来"），抽三张</li>
-<li>[ ] 每张写一个关键词，连起来写一段自我叙述</li>
-</ul>
-<p><strong>第二阶段的"不要"：</strong>
-- 不要因为"没什么大事"就不做三牌阵——小事也有小事的深度
-- 不要在抽牌前先预设"答案应该是什么"</p>
-<p><strong>周末小回顾（Day 14）：</strong> 两周了。翻看14天的记录，问自己：这段时间里，哪一天的牌让你印象最深？为什么？</p>
-<hr />
-<h2>第三阶段：练习串故事（Day 15-21）</h2>
-<p><strong>目标：</strong> 把前面所有技能融会贯通，形成完整的"自我对话"能力。</p>
-<p><strong>每日任务（不变）：</strong></p>
-<ul>
-<li>[ ] 每日单张牌 + 一句话记录</li>
-</ul>
-<p><strong>每周任务（选一天，花15分钟）：</strong></p>
-<ul>
-<li>[ ] 三牌阵 + 用模块六的方法把三张牌串成一个3-5句的故事</li>
-<li>[ ] 注意找"流动"——情绪、动作、视角的变化</li>
-<li>[ ] 写下来。写完了就是完成，不评判好坏</li>
-</ul>
-<p><strong>第三阶段的"不要"：</strong>
-- 不要和第一阶段对比"进步了没有"——塔罗没有"进步"，只有"更熟悉"
-- 如果某一天完全没有感觉，记一句"今天没有感觉"也是记录</p>
-<p><strong>21天总结（Day 21）：</strong> 回答三个问题：</p>
-<ol>
-<li>这21天里，你对自己有什么以前没注意到的发现？</li>
-<li>你现在翻开一张牌时，和第一天相比，有什么不同的感受？</li>
-<li>你想不想继续下去？</li>
-</ol>
-<hr />
-<h2>打卡表</h2>
-<p>以下是21天的打卡表。每完成一天，在那个格子里打一个勾。不需要完美——漏掉一两天完全没关系，第二天继续就好。</p>
-<table>
-<thead>
-<tr>
-<th>天数</th>
-<th>日期</th>
-<th>抽牌✓</th>
-<th>关键词</th>
-<th>额外任务</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Day 1</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 2</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 3</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 4</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 5</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 6</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 7</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td>🔍 周回顾</td>
-</tr>
-<tr>
-<td>Day 8</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 9</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 10</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 11</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 12</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 13</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 14</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td>🔍 周回顾 + 三牌阵</td>
-</tr>
-<tr>
-<td>Day 15</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 16</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 17</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 18</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 19</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 20</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Day 21</td>
-<td><strong>/</strong></td>
-<td>☐</td>
-<td></td>
-<td>🔍 21天总结 + 三牌阵+串故事</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>练习期满后：你不是一个人在学</h2>
-<p>21天练习计划结束后，你会有三个选择：</p>
-<p><strong>选择一：继续自己练。</strong> 这套方法已经足够让你持续和你的牌对话。你可以继续用每日单张牌 + 每周三牌阵的节奏，让它成为生活的一部分。</p>
-<p><strong>选择二：扫码加入我们的学习社群。</strong> 群里不讲课，不讲"标准牌意"，也不替任何人"算"。我们做的事情是——分享练习记录、交流直觉联想、互相启发不同的读牌视角。这里有和你一样在用关键词联想法的人，你可以看到别人怎么读同一张牌，也可以分享你自己的角度。</p>
-<p><strong>选择三：带着这套方法去教别人。</strong> 当你觉得你已经足够熟悉关键词联想法了，试着教一个朋友做一次三牌阵练习。教是最好的学——你会在教的过程中，发现自己对这套方法的理解又深了一层。</p>
-<hr />
-<blockquote>
-<p><strong>社群入口：</strong> 扫描下方二维码加入学习社群。</p>
-<p>群里不定期会有练习主题讨论、牌面共读活动，以及未来更多进阶内容的首发。入群后记得看群公告，里面有一份《社群练习公约》——大概花你一分钟读完。</p>
-<p><em>（此处放置入群二维码）</em></p>
-</blockquote>
-<hr />
-<h2>写在最后</h2>
-<p>六百年前，意大利人用塔罗牌玩游戏。两百年前，法国人用塔罗牌探索神秘。六十年前，美国人用塔罗牌了解自己。</p>
-<p>现在，你用塔罗牌做你的事。</p>
-<p>每一代人都在用自己的方式重新发明塔罗。你不需要成为任何人口中的"塔罗师"。你只需要翻开牌，看着它，相信你看到的。</p>
-<p>你已经会了。</p>
-        </div>
-    </section>
-    
-        </main>
-    </div>
+<p>这些方法不需要依赖任何"大师"帮你解读。翻开牌的那一刻，解读权在你手里。</p>
+<p>接下来唯一要做的事，就是<strong>持续练下去</strong>。每天抽一张牌，每周做一次三牌阵，偶尔把牌连成故事。不需要完美，不需要每天都有"收获"。只需要翻开牌，看着它，相信你看到的。</p>
+<p><strong>你已经会了。</strong></p></div>
+    </section></main>
+</div>
 </body>
 </html>
