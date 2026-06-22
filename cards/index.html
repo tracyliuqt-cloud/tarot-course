@@ -61,6 +61,14 @@ body{background:var(--bg);color:var(--text);font-family:"Noto Serif SC","Source 
 /* 一句话点睛 */
 .punchline{background:var(--highlight);border-left:3px solid var(--accent);padding:16px 22px;border-radius:0 8px 8px 0;font-size:0.95em;color:var(--accent);font-style:italic;letter-spacing:0.03em}
 
+/* 搜索框 */
+.search-box{max-width:560px;margin:0 auto 48px}
+.search-input{width:100%;padding:14px 20px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:1em;font-family:inherit;outline:none;transition:border-color 0.2s}
+.search-input:focus{border-color:var(--accent)}
+.search-input::placeholder{color:var(--muted)}
+.search-hint{text-align:center;color:var(--muted);font-size:0.8em;margin-top:8px}
+.card-entry.hidden{display:none}
+
 /* 响应式 */
 @media(max-width:720px){
   .card-entry{flex-direction:column;gap:28px}
@@ -77,6 +85,11 @@ body{background:var(--bg);color:var(--text);font-family:"Noto Serif SC","Source 
   <h1>🃏 78张牌视觉索引</h1>
   <p class="subtitle">大阿尔卡纳 22 张 + 小阿尔卡纳 56 张 · 正位与逆位</p>
   <p class="note">先用自己的眼睛看 → 再看关键词参考 → 相信你的直觉</p>
+</div>
+
+<div class="search-box">
+  <input type="text" class="search-input" id="cardSearch" placeholder="输入牌名或序号，如：愚人、权杖三、13、Wands05..." oninput="filterCards()">
+  <p class="search-hint">支持中文名、英文名、序号搜索 · 不区分大小写</p>
 </div>
 
 <!-- ========== 大阿尔卡纳 ========== -->
@@ -3786,5 +3799,71 @@ body{background:var(--bg);color:var(--text);font-family:"Noto Serif SC","Source 
 
 
 </div>
+<script>
+function filterCards(){
+  var q=document.getElementById('cardSearch').value.trim().toLowerCase();
+  var cards=document.querySelectorAll('.card-entry');
+  var groupHeaders=document.querySelectorAll('div[style*="text-align:center"]');
+
+  if(!q){
+    cards.forEach(function(c){c.classList.remove('hidden')});
+    groupHeaders.forEach(function(h){h.style.display=''});
+    return;
+  }
+
+  cards.forEach(function(c){
+    var name=c.querySelector('.card-name');
+    var en=c.querySelector('.card-en');
+    var num=c.querySelector('.card-number');
+    var nameText=name?name.textContent.toLowerCase():'';
+    var enText=en?en.textContent.toLowerCase():'';
+    var numText=num?num.textContent.toLowerCase():'';
+
+    // 匹配小牌的英文编号（如 wands05）
+    var img=c.querySelector('img');
+    var imgAlt=img?img.getAttribute('alt').toLowerCase():'';
+
+    var match=nameText.indexOf(q)>-1||enText.indexOf(q)>-1||numText.indexOf(q)>-1||imgAlt.indexOf(q)>-1;
+
+    // 特殊匹配：权杖/圣杯/宝剑/星币 + 数字
+    var suitMap={'权杖':'wands','圣杯':'cups','宝剑':'swords','星币':'pents','pentacles':'pents'};
+    for(var cn in suitMap){
+      if(q.indexOf(cn)>-1||q.indexOf(suitMap[cn])>-1){
+        if(img&&img.getAttribute('src').toLowerCase().indexOf(suitMap[cn])>-1){
+          // 进一步检查数字
+          var numMatch=q.match(/(\d+)/);
+          if(numMatch){
+            var n=parseInt(numMatch[1]);
+            var src=img.getAttribute('src');
+            var cardNum=parseInt(src.match(/(\d+)\.jpg/)[1]);
+            match=(cardNum===n);
+          }else{
+            match=true;
+          }
+        }
+      }
+    }
+
+    if(match){
+      c.classList.remove('hidden');
+    }else{
+      c.classList.add('hidden');
+    }
+  });
+
+  // 隐藏没有可见卡牌的分组标题
+  groupHeaders.forEach(function(h){
+    var next=h.nextElementSibling;
+    var hasVisible=false;
+    while(next&&!next.querySelector('h2')&&!next.querySelector('h3')){
+      if(next.classList&&next.classList.contains('card-entry')&&!next.classList.contains('hidden')){
+        hasVisible=true;break;
+      }
+      next=next.nextElementSibling;
+    }
+    h.style.display=hasVisible?'':'none';
+  });
+}
+</script>
 </body>
 </html>
